@@ -1,0 +1,190 @@
+"C:\Program Files\Java\jdk-24\bin\java.exe" "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2025.1.3\lib\idea_rt.jar=62181" -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 -classpath C:\Users\msult\OneDrive\Documents\Intellij\JDBC-Task\out\production\JDBC-Task;C:\Users\msult\Downloads\mysql-connector-j-9.7.0.jar;C:\Users\msult\Downloads\lombok.jar com.example.jdbc.Main
+
+Welcome to CRUD API
+1.Create Database
+2.Create table
+3.Insert data
+4.Update data
+5.Delete data
+6.Retrieve data
+7.Exit
+1
+Enter database name:
+Ai
+Database Created Successfully
+
+Welcome to CRUD API
+1.Create Database
+2.Create table
+3.Insert data
+4.Update data
+5.Delete data
+6.Retrieve data
+7.Exit
+2
+Table Created Successfully
+
+Welcome to CRUD API
+1.Create Database
+2.Create table
+3.Insert data
+4.Update data
+5.Delete data
+6.Retrieve data
+7.Exit
+3
+Enter Register Number:
+4071
+Enter Name:
+Ai
+Enter Department:
+CSE
+Enter Email:
+ai@gmail.com
+Data Inserted Successfully
+
+Welcome to CRUD API
+1.Create Database
+2.Create table
+3.Insert data
+4.Update data
+5.Delete data
+6.Retrieve data
+7.Exit
+3
+Enter Register Number:
+4072
+Enter Name:
+Ms
+Enter Department:
+CSE
+Enter Email:
+msul@gmail.com
+Data Inserted Successfully
+
+Welcome to CRUD API
+1.Create Database
+2.Create table
+3.Insert data
+4.Update data
+5.Delete data
+6.Retrieve data
+7.Exit
+3
+Enter Register Number:
+4073
+Enter Name:
+Rem
+Enter Department:
+AI&DS
+Enter Email:
+rem@gmail.com
+Data Inserted Successfully
+
+Welcome to CRUD API
+1.Create Database
+2.Create table
+3.Insert data
+4.Update data
+5.Delete data
+6.Retrieve data
+7.Exit
+3
+Enter Register Number:
+4074
+Enter Name:
+Ruby
+Enter Department:
+CSE
+Enter Email:
+rubi@gmail.com
+Data Inserted Successfully
+
+Welcome to CRUD API
+1.Create Database
+2.Create table
+3.Insert data
+4.Update data
+5.Delete data
+6.Retrieve data
+7.Exit
+4
+Enter Register Number:
+4074
+Enter New Name:
+Rubi
+Updated Successfully
+
+Welcome to CRUD API
+1.Create Database
+2.Create table
+3.Insert data
+4.Update data
+5.Delete data
+6.Retrieve data
+7.Exit
+3
+Enter Register Number:
+4075
+Enter Name:
+Someone
+Enter Department:
+CSE
+Enter Email:
+some@gmail.com
+Data Inserted Successfully
+
+Welcome to CRUD API
+1.Create Database
+2.Create table
+3.Insert data
+4.Update data
+5.Delete data
+6.Retrieve data
+7.Exit
+6
+1 4071 Ai CSE ai@gmail.com
+2 4072 Ms CSE msul@gmail.com
+3 4073 Rem AI&DS rem@gmail.com
+4 4074 Rubi CSE rubi@gmail.com
+5 4075 Someone CSE some@gmail.com
+
+Welcome to CRUD API
+1.Create Database
+2.Create table
+3.Insert data
+4.Update data
+5.Delete data
+6.Retrieve data
+7.Exit
+5
+Enter Register Number:
+4075
+Deleted Successfully
+
+Welcome to CRUD API
+1.Create Database
+2.Create table
+3.Insert data
+4.Update data
+5.Delete data
+6.Retrieve data
+7.Exit
+6
+1 4071 Ai CSE ai@gmail.com
+2 4072 Ms CSE msul@gmail.com
+3 4073 Rem AI&DS rem@gmail.com
+4 4074 Rubi CSE rubi@gmail.com
+
+Welcome to CRUD API
+1.Create Database
+2.Create table
+3.Insert data
+4.Update data
+5.Delete data
+6.Retrieve data
+7.Exit
+7
+Exiting...
+
+Process finished with exit code 0
