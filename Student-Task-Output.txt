@@ -1,0 +1,115 @@
+"C:\Program Files\Java\jdk-24\bin\java.exe" "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2025.1.3\lib\idea_rt.jar=61375" -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 -classpath C:\Users\msult\OneDrive\Documents\Intellij\Student-Task\out\production\Student-Task;C:\Users\msult\Downloads\mysql-connector-j-9.7.0.jar com.example.jdbc.main.App
+
+===== STUDENT ENROLLMENT SYSTEM =====
+1. Add Student
+2. Fetch Student By ID
+3. Update Course Details
+4. Delete Student
+5. Fetch All Students
+6. Fetch Student By Email + Enrollment Date
+7. Exit
+Enter choice: 1
+Enter ID: 1
+Enter First Name: Ai
+Enter Last Name: Hoshino
+Enter Gender (MALE/FEMALE): female
+Enter City: Tokyo
+Enter State: same
+Enter Mobile Number: 8778192240
+Enter Email ID: ai@gmail.com
+Enter Course ID: 101
+Enter Course Name: Ai101
+Enter Enrollment Date (dd-MM-yyyy): 13-09-2005
+Enter Course Type (ONLINE/OFFLINE): online
+Enter Grade (A/B/C/D/F): a
+Student added successfully.
+
+===== STUDENT ENROLLMENT SYSTEM =====
+1. Add Student
+2. Fetch Student By ID
+3. Update Course Details
+4. Delete Student
+5. Fetch All Students
+6. Fetch Student By Email + Enrollment Date
+7. Exit
+Enter choice: 2
+Enter Student ID: 1
+
+Student ID = 1
+First Name = Ai
+Last Name = Hoshino
+Gender = female
+City = Tokyo
+State = same
+Mobile Number = 8778192240
+Email ID = ai@gmail.com
+Course ID = 101
+Course Name = Ai101
+Enrollment Date = 2005-09-13
+Course Type = online
+Grade = a
+
+===== STUDENT ENROLLMENT SYSTEM =====
+1. Add Student
+2. Fetch Student By ID
+3. Update Course Details
+4. Delete Student
+5. Fetch All Students
+6. Fetch Student By Email + Enrollment Date
+7. Exit
+Enter choice: 3
+Enter Student ID: 1
+Enter New Course Name: Ai-101
+Enter New Grade: A
+Course updated successfully.
+
+===== STUDENT ENROLLMENT SYSTEM =====
+1. Add Student
+2. Fetch Student By ID
+3. Update Course Details
+4. Delete Student
+5. Fetch All Students
+6. Fetch Student By Email + Enrollment Date
+7. Exit
+Enter choice: 5
+
+Student ID = 1
+First Name = Ai
+Last Name = Hoshino
+Gender = female
+City = Tokyo
+State = same
+Mobile Number = 8778192240
+Email ID = ai@gmail.com
+Course ID = 101
+Course Name = Ai-101
+Enrollment Date = 2005-09-13
+Course Type = online
+Grade = A
+---------------------------
+
+===== STUDENT ENROLLMENT SYSTEM =====
+1. Add Student
+2. Fetch Student By ID
+3. Update Course Details
+4. Delete Student
+5. Fetch All Students
+6. Fetch Student By Email + Enrollment Date
+7. Exit
+Enter choice: 6
+Enter Email ID: 1
+Enter Enrollment Date (dd-MM-yyyy): 13-09-2005
+Student not found.
+
+===== STUDENT ENROLLMENT SYSTEM =====
+1. Add Student
+2. Fetch Student By ID
+3. Update Course Details
+4. Delete Student
+5. Fetch All Students
+6. Fetch Student By Email + Enrollment Date
+7. Exit
+Enter choice: 7
+Exiting...
+
+Process finished with exit code 0
