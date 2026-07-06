@@ -1,0 +1,541 @@
+"C:\Program Files\Java\jdk-24\bin\java.exe" "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2025.1.3\lib\idea_rt.jar=53266" -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 -classpath C:\Users\msult\OneDrive\Documents\Intellij\Student-Task-Hibernate\target\classes;C:\Users\msult\.m2\repository\org\hibernate\orm\hibernate-core\6.6.18.Final\hibernate-core-6.6.18.Final.jar;C:\Users\msult\.m2\repository\jakarta\transaction\jakarta.transaction-api\2.0.1\jakarta.transaction-api-2.0.1.jar;C:\Users\msult\.m2\repository\org\jboss\logging\jboss-logging\3.5.0.Final\jboss-logging-3.5.0.Final.jar;C:\Users\msult\.m2\repository\org\hibernate\common\hibernate-commons-annotations\7.0.3.Final\hibernate-commons-annotations-7.0.3.Final.jar;C:\Users\msult\.m2\repository\io\smallrye\jandex\3.2.0\jandex-3.2.0.jar;C:\Users\msult\.m2\repository\com\fasterxml\classmate\1.5.1\classmate-1.5.1.jar;C:\Users\msult\.m2\repository\net\bytebuddy\byte-buddy\1.15.11\byte-buddy-1.15.11.jar;C:\Users\msult\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\4.0.0\jakarta.xml.bind-api-4.0.0.jar;C:\Users\msult\.m2\repository\jakarta\activation\jakarta.activation-api\2.1.0\jakarta.activation-api-2.1.0.jar;C:\Users\msult\.m2\repository\org\glassfish\jaxb\jaxb-runtime\4.0.2\jaxb-runtime-4.0.2.jar;C:\Users\msult\.m2\repository\org\glassfish\jaxb\jaxb-core\4.0.2\jaxb-core-4.0.2.jar;C:\Users\msult\.m2\repository\org\eclipse\angus\angus-activation\2.0.0\angus-activation-2.0.0.jar;C:\Users\msult\.m2\repository\org\glassfish\jaxb\txw2\4.0.2\txw2-4.0.2.jar;C:\Users\msult\.m2\repository\com\sun\istack\istack-commons-runtime\4.1.1\istack-commons-runtime-4.1.1.jar;C:\Users\msult\.m2\repository\jakarta\inject\jakarta.inject-api\2.0.1\jakarta.inject-api-2.0.1.jar;C:\Users\msult\.m2\repository\org\antlr\antlr4-runtime\4.13.0\antlr4-runtime-4.13.0.jar;C:\Users\msult\.m2\repository\com\mysql\mysql-connector-j\9.4.0\mysql-connector-j-9.4.0.jar;C:\Users\msult\.m2\repository\com\google\protobuf\protobuf-java\4.31.1\protobuf-java-4.31.1.jar;C:\Users\msult\.m2\repository\jakarta\persistence\jakarta.persistence-api\3.2.0\jakarta.persistence-api-3.2.0.jar com.msulthan.hibernate.main.App
+
+========== STUDENT ENROLLMENT SYSTEM ==========
+1. Add Student
+2. Fetch Student By ID
+3. Update Course Details
+4. Delete Student
+5. Fetch All Students
+6. Fetch Student By Email + Enrollment Date
+7. Exit
+
+Enter Choice : 1
+First Name : Ai
+Last Name : Hoshino
+Gender (MALE/FEMALE): FEMALE
+City : Tokyo
+State : Japan
+Mobile Number : 8778145510
+Email ID : ai@gmail.com
+Course ID : 101
+Course Name : Ai-101
+Enrollment Date (dd-MM-yyyy): 22-06-2026
+Course Type (ONLINE/OFFLINE): ONLINE
+Grade (A/B/C/D/F): A
+Jul 06, 2026 7:52:42 PM org.hibernate.Version logVersion
+INFO: HHH000412: Hibernate ORM core version 6.6.18.Final
+Jul 06, 2026 7:52:42 PM org.hibernate.cfg.Environment <clinit>
+INFO: HHH000205: Loaded properties from resource hibernate.properties: {hibernate.connection.driver_class=com.mysql.cj.jdbc.Driver, hibernate.format_sql=true, hibernate.connection.url=jdbc:mysql://localhost:3306/studentdb, hibernate.hbm2ddl.auto=update, hibernate.dialect=org.hibernate.dialect.MySQLDialect, hibernate.show_sql=true, hibernate.connection.password=****, hibernate.highlight_sql=true, hibernate.current_session_context_class=thread, hibernate.connection.username=root}
+Jul 06, 2026 7:52:43 PM org.hibernate.cache.internal.RegionFactoryInitiator initiateService
+INFO: HHH000026: Second-level cache disabled
+Jul 06, 2026 7:52:43 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+WARN: HHH10001002: Using built-in connection pool (not intended for production use)
+Jul 06, 2026 7:52:43 PM org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl constructDialect
+WARN: HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+Jul 06, 2026 7:52:43 PM org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator logConnectionInfo
+INFO: HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/studentdb]
+	Database driver: com.mysql.cj.jdbc.Driver
+	Database version: 8.0.44
+	Autocommit mode: false
+	Isolation level: undefined/unknown
+	Minimum pool size: 1
+	Maximum pool size: 20
+Jul 06, 2026 7:52:44 PM org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl getIsolatedConnection
+INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@6397248c] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+[Hibernate] 
+    create table student_table (
+        id integer not null auto_increment,
+        city varchar(255) not null,
+        course_id integer,
+        course_name varchar(255),
+        course_type enum ('OFFLINE','ONLINE'),
+        email_id varchar(255) not null,
+        enrollment_date date,
+        first_name varchar(255) not null,
+        gender enum ('FEMALE','MALE') not null,
+        grade enum ('A','B','C','D','F'),
+        last_name varchar(255) not null,
+        mobile_number varchar(255) not null,
+        state varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+[Hibernate] 
+    alter table student_table 
+       drop index UKc7vhu7pe1yccxycepqkabj7an
+[Hibernate] 
+    alter table student_table 
+       add constraint UKc7vhu7pe1yccxycepqkabj7an unique (email_id)
+[Hibernate] 
+    alter table student_table 
+       drop index UKafmwyhqbcmgtwnuyj2gbkhhi7
+[Hibernate] 
+    alter table student_table 
+       add constraint UKafmwyhqbcmgtwnuyj2gbkhhi7 unique (mobile_number)
+[Hibernate] 
+    select
+        s1_0.id,
+        s1_0.city,
+        s1_0.course_id,
+        s1_0.course_name,
+        s1_0.course_type,
+        s1_0.email_id,
+        s1_0.enrollment_date,
+        s1_0.first_name,
+        s1_0.gender,
+        s1_0.grade,
+        s1_0.last_name,
+        s1_0.mobile_number,
+        s1_0.state 
+    from
+        student_table s1_0 
+    where
+        s1_0.email_id=? 
+        and s1_0.enrollment_date=?
+[Hibernate] 
+    insert 
+    into
+        student_table
+        (city, course_id, course_name, course_type, email_id, enrollment_date, first_name, gender, grade, last_name, mobile_number, state) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Student Added Successfully.
+
+========== STUDENT ENROLLMENT SYSTEM ==========
+1. Add Student
+2. Fetch Student By ID
+3. Update Course Details
+4. Delete Student
+5. Fetch All Students
+6. Fetch Student By Email + Enrollment Date
+7. Exit
+
+Enter Choice : 1
+First Name : Rem
+Last Name : S
+Gender (MALE/FEMALE): FEMALE
+City : Tokyo
+State : Japan
+Mobile Number : 8779145510
+Email ID : rem@gmail.com
+Course ID : 101
+Course Name : Ai-101
+Enrollment Date (dd-MM-yyyy): 27-06-2026
+Course Type (ONLINE/OFFLINE): ONLINE
+Grade (A/B/C/D/F): A
+[Hibernate] 
+    select
+        s1_0.id,
+        s1_0.city,
+        s1_0.course_id,
+        s1_0.course_name,
+        s1_0.course_type,
+        s1_0.email_id,
+        s1_0.enrollment_date,
+        s1_0.first_name,
+        s1_0.gender,
+        s1_0.grade,
+        s1_0.last_name,
+        s1_0.mobile_number,
+        s1_0.state 
+    from
+        student_table s1_0 
+    where
+        s1_0.email_id=? 
+        and s1_0.enrollment_date=?
+[Hibernate] 
+    insert 
+    into
+        student_table
+        (city, course_id, course_name, course_type, email_id, enrollment_date, first_name, gender, grade, last_name, mobile_number, state) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Student Added Successfully.
+
+========== STUDENT ENROLLMENT SYSTEM ==========
+1. Add Student
+2. Fetch Student By ID
+3. Update Course Details
+4. Delete Student
+5. Fetch All Students
+6. Fetch Student By Email + Enrollment Date
+7. Exit
+
+Enter Choice : 2
+Enter Student ID : 1
+[Hibernate] 
+    select
+        s1_0.id,
+        s1_0.city,
+        s1_0.course_id,
+        s1_0.course_name,
+        s1_0.course_type,
+        s1_0.email_id,
+        s1_0.enrollment_date,
+        s1_0.first_name,
+        s1_0.gender,
+        s1_0.grade,
+        s1_0.last_name,
+        s1_0.mobile_number,
+        s1_0.state 
+    from
+        student_table s1_0 
+    where
+        s1_0.id=?
+
+Student ID = 1
+First Name = Ai
+Last Name = Hoshino
+Gender = FEMALE
+City = Tokyo
+State = Japan
+Mobile Number = 8778145510
+Email ID = ai@gmail.com
+Course ID = 101
+Course Name = Ai-101
+Enrollment Date = 2026-06-22
+Course Type = ONLINE
+Grade = A
+
+========== STUDENT ENROLLMENT SYSTEM ==========
+1. Add Student
+2. Fetch Student By ID
+3. Update Course Details
+4. Delete Student
+5. Fetch All Students
+6. Fetch Student By Email + Enrollment Date
+7. Exit
+
+Enter Choice : 3
+Student ID : 2
+New Course Name : CSE-101
+New Grade : A
+[Hibernate] 
+    select
+        s1_0.id,
+        s1_0.city,
+        s1_0.course_id,
+        s1_0.course_name,
+        s1_0.course_type,
+        s1_0.email_id,
+        s1_0.enrollment_date,
+        s1_0.first_name,
+        s1_0.gender,
+        s1_0.grade,
+        s1_0.last_name,
+        s1_0.mobile_number,
+        s1_0.state 
+    from
+        student_table s1_0 
+    where
+        s1_0.id=?
+[Hibernate] 
+    select
+        s1_0.id,
+        s1_0.city,
+        s1_0.course_id,
+        s1_0.course_name,
+        s1_0.course_type,
+        s1_0.email_id,
+        s1_0.enrollment_date,
+        s1_0.first_name,
+        s1_0.gender,
+        s1_0.grade,
+        s1_0.last_name,
+        s1_0.mobile_number,
+        s1_0.state 
+    from
+        student_table s1_0 
+    where
+        s1_0.id=?
+[Hibernate] 
+    update
+        student_table 
+    set
+        city=?,
+        course_id=?,
+        course_name=?,
+        course_type=?,
+        email_id=?,
+        enrollment_date=?,
+        first_name=?,
+        gender=?,
+        grade=?,
+        last_name=?,
+        mobile_number=?,
+        state=? 
+    where
+        id=?
+Student Updated Successfully.
+
+========== STUDENT ENROLLMENT SYSTEM ==========
+1. Add Student
+2. Fetch Student By ID
+3. Update Course Details
+4. Delete Student
+5. Fetch All Students
+6. Fetch Student By Email + Enrollment Date
+7. Exit
+
+Enter Choice : 2
+Enter Student ID : 2
+[Hibernate] 
+    select
+        s1_0.id,
+        s1_0.city,
+        s1_0.course_id,
+        s1_0.course_name,
+        s1_0.course_type,
+        s1_0.email_id,
+        s1_0.enrollment_date,
+        s1_0.first_name,
+        s1_0.gender,
+        s1_0.grade,
+        s1_0.last_name,
+        s1_0.mobile_number,
+        s1_0.state 
+    from
+        student_table s1_0 
+    where
+        s1_0.id=?
+
+Student ID = 2
+First Name = Rem
+Last Name = S
+Gender = FEMALE
+City = Tokyo
+State = Japan
+Mobile Number = 8779145510
+Email ID = rem@gmail.com
+Course ID = 101
+Course Name = CSE-101
+Enrollment Date = 2026-06-27
+Course Type = ONLINE
+Grade = A
+
+========== STUDENT ENROLLMENT SYSTEM ==========
+1. Add Student
+2. Fetch Student By ID
+3. Update Course Details
+4. Delete Student
+5. Fetch All Students
+6. Fetch Student By Email + Enrollment Date
+7. Exit
+
+Enter Choice : 1
+First Name : hello
+Last Name : world
+Gender (MALE/FEMALE): MALE
+City : CHENNAI
+State : TN
+Mobile Number : 1234567891
+Email ID : hellowo@gmail.com
+Course ID : 101
+Course Name : Ai-101
+Enrollment Date (dd-MM-yyyy): 12-12-2020
+Course Type (ONLINE/OFFLINE): ONLINE
+Grade (A/B/C/D/F): B
+[Hibernate] 
+    select
+        s1_0.id,
+        s1_0.city,
+        s1_0.course_id,
+        s1_0.course_name,
+        s1_0.course_type,
+        s1_0.email_id,
+        s1_0.enrollment_date,
+        s1_0.first_name,
+        s1_0.gender,
+        s1_0.grade,
+        s1_0.last_name,
+        s1_0.mobile_number,
+        s1_0.state 
+    from
+        student_table s1_0 
+    where
+        s1_0.email_id=? 
+        and s1_0.enrollment_date=?
+[Hibernate] 
+    insert 
+    into
+        student_table
+        (city, course_id, course_name, course_type, email_id, enrollment_date, first_name, gender, grade, last_name, mobile_number, state) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Student Added Successfully.
+
+========== STUDENT ENROLLMENT SYSTEM ==========
+1. Add Student
+2. Fetch Student By ID
+3. Update Course Details
+4. Delete Student
+5. Fetch All Students
+6. Fetch Student By Email + Enrollment Date
+7. Exit
+
+Enter Choice : 4
+Student ID : 3
+[Hibernate] 
+    select
+        s1_0.id,
+        s1_0.city,
+        s1_0.course_id,
+        s1_0.course_name,
+        s1_0.course_type,
+        s1_0.email_id,
+        s1_0.enrollment_date,
+        s1_0.first_name,
+        s1_0.gender,
+        s1_0.grade,
+        s1_0.last_name,
+        s1_0.mobile_number,
+        s1_0.state 
+    from
+        student_table s1_0 
+    where
+        s1_0.id=?
+[Hibernate] 
+    select
+        s1_0.id,
+        s1_0.city,
+        s1_0.course_id,
+        s1_0.course_name,
+        s1_0.course_type,
+        s1_0.email_id,
+        s1_0.enrollment_date,
+        s1_0.first_name,
+        s1_0.gender,
+        s1_0.grade,
+        s1_0.last_name,
+        s1_0.mobile_number,
+        s1_0.state 
+    from
+        student_table s1_0 
+    where
+        s1_0.id=?
+[Hibernate] 
+    delete 
+    from
+        student_table 
+    where
+        id=?
+Student Deleted Successfully.
+
+========== STUDENT ENROLLMENT SYSTEM ==========
+1. Add Student
+2. Fetch Student By ID
+3. Update Course Details
+4. Delete Student
+5. Fetch All Students
+6. Fetch Student By Email + Enrollment Date
+7. Exit
+
+Enter Choice : 5
+[Hibernate] 
+    select
+        s1_0.id,
+        s1_0.city,
+        s1_0.course_id,
+        s1_0.course_name,
+        s1_0.course_type,
+        s1_0.email_id,
+        s1_0.enrollment_date,
+        s1_0.first_name,
+        s1_0.gender,
+        s1_0.grade,
+        s1_0.last_name,
+        s1_0.mobile_number,
+        s1_0.state 
+    from
+        student_table s1_0
+
+Student ID = 1
+First Name = Ai
+Last Name = Hoshino
+Gender = FEMALE
+City = Tokyo
+State = Japan
+Mobile Number = 8778145510
+Email ID = ai@gmail.com
+Course ID = 101
+Course Name = Ai-101
+Enrollment Date = 2026-06-22
+Course Type = ONLINE
+Grade = A
+---------------------------------------
+
+Student ID = 2
+First Name = Rem
+Last Name = S
+Gender = FEMALE
+City = Tokyo
+State = Japan
+Mobile Number = 8779145510
+Email ID = rem@gmail.com
+Course ID = 101
+Course Name = CSE-101
+Enrollment Date = 2026-06-27
+Course Type = ONLINE
+Grade = A
+---------------------------------------
+
+========== STUDENT ENROLLMENT SYSTEM ==========
+1. Add Student
+2. Fetch Student By ID
+3. Update Course Details
+4. Delete Student
+5. Fetch All Students
+6. Fetch Student By Email + Enrollment Date
+7. Exit
+
+Enter Choice : 6
+Email ID : ai@gmail.com
+Enrollment Date (dd-MM-yyyy): 22-06-2026
+[Hibernate] 
+    select
+        s1_0.id,
+        s1_0.city,
+        s1_0.course_id,
+        s1_0.course_name,
+        s1_0.course_type,
+        s1_0.email_id,
+        s1_0.enrollment_date,
+        s1_0.first_name,
+        s1_0.gender,
+        s1_0.grade,
+        s1_0.last_name,
+        s1_0.mobile_number,
+        s1_0.state 
+    from
+        student_table s1_0 
+    where
+        s1_0.email_id=? 
+        and s1_0.enrollment_date=?
+
+Student ID = 1
+First Name = Ai
+Last Name = Hoshino
+Gender = FEMALE
+City = Tokyo
+State = Japan
+Mobile Number = 8778145510
+Email ID = ai@gmail.com
+Course ID = 101
+Course Name = Ai-101
+Enrollment Date = 2026-06-22
+Course Type = ONLINE
+Grade = A
+
+========== STUDENT ENROLLMENT SYSTEM ==========
+1. Add Student
+2. Fetch Student By ID
+3. Update Course Details
+4. Delete Student
+5. Fetch All Students
+6. Fetch Student By Email + Enrollment Date
+7. Exit
+
+Enter Choice : 7
+Thank You.
+
+Process finished with exit code 0
